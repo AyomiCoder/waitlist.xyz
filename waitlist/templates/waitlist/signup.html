@@ -1,0 +1,25 @@
+<!-- waitlist/templates/waitlist/signup.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waitlist Signup</title>
+    <link rel="stylesheet" href="{% static 'waitlist/style.css' %}">
+</head>
+<body>
+
+    <h2>Join Our Waitlist</h2>
+
+    <form method="post" action="{% url 'waitlist_signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Join Now</button>
+    </form>
+
+</body>
+</html>
